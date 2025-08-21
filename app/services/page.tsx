@@ -502,7 +502,7 @@ export default function ServicesPage() {
                 <BookOpen className="h-6 w-6 text-primary mr-2" />
                 <span className="font-bold text-lg">BrightPath Scholars</span>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-black">
                 Empowering students through personalized K-12 tutoring in Los Angeles.
               </p>
             </div>
@@ -510,22 +510,22 @@ export default function ServicesPage() {
               <h4 className="font-semibold text-foreground">Services</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Mathematics
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Science
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     English & Writing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Test Prep
                   </Link>
                 </li>
@@ -534,18 +534,18 @@ export default function ServicesPage() {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>
+                <li className="text-black">
                   <Link href="/story" className="hover:text-foreground transition-colors">
                     Our Story
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-foreground transition-colors">
+                  <Link href="/contact" className="hover:text-foreground transition-colors text-black">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources" className="hover:text-foreground transition-colors">
+                  <Link href="/resources" className="hover:text-foreground transition-colors text-black">
                     Resources
                   </Link>
                 </li>
@@ -554,14 +554,14 @@ export default function ServicesPage() {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Los Angeles, CA</li>
-                <li>brightpathscholars@gmail.com</li>
-                <li>(818) 455-2423</li>
+                <li className="text-black">Los Angeles, CA</li>
+                <li className="text-black">brightpathscholars@gmail.com</li>
+                <li className="text-black">(818) 455 - 2423</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 BrightPath Scholars. All rights reserved.</p>
+            <p className="text-black">&copy; 2024 BrightPath Scholars. All rights reserved.</p>
           </div>
         </div>
       </footer>
