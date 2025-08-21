@@ -16,22 +16,22 @@ export default function OurStoryPage() {
               <span className="font-bold text-xl text-foreground">BrightPath Scholars</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/" className="hover:text-foreground transition-colors text-black">
                 Home
               </Link>
-              <Link href="/#services" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/#services" className="hover:text-foreground transition-colors text-black">
                 Services
               </Link>
               <Link href="/story" className="text-foreground font-medium">
                 Our Story
               </Link>
-              <Link href="/#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/#testimonials" className="hover:text-foreground transition-colors text-black">
                 Testimonials
               </Link>
-              <Link href="/resources" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/resources" className="hover:text-foreground transition-colors text-black">
                 Resources
               </Link>
-              <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/contact" className="hover:text-foreground transition-colors text-black">
                 Contact
               </Link>
               <Button asChild>
@@ -213,7 +213,7 @@ export default function OurStoryPage() {
                 <BookOpen className="h-6 w-6 text-primary mr-2" />
                 <span className="font-bold text-lg">BrightPath Scholars</span>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-black">
                 Empowering students through personalized K-12 tutoring in Los Angeles.
               </p>
             </div>
@@ -221,22 +221,22 @@ export default function OurStoryPage() {
               <h4 className="font-semibold text-foreground">Services</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Mathematics
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Science
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     English & Writing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Test Prep
                   </Link>
                 </li>
@@ -246,17 +246,17 @@ export default function OurStoryPage() {
               <h4 className="font-semibold text-foreground">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
-                  <Link href="/story" className="hover:text-foreground transition-colors">
+                  <Link href="/story" className="hover:text-foreground transition-colors text-black">
                     Our Story
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-foreground transition-colors">
+                  <Link href="/contact" className="hover:text-foreground transition-colors text-black">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources" className="hover:text-foreground transition-colors">
+                  <Link href="/resources" className="hover:text-foreground transition-colors text-black">
                     Resources
                   </Link>
                 </li>
@@ -265,14 +265,14 @@ export default function OurStoryPage() {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Los Angeles, CA</li>
-                <li>brightpathscholars@gmail.com</li>
-                <li>(818) 455-2423</li>
+                <li className="text-black">Los Angeles, CA</li>
+                <li className="text-black">brightpathscholars@gmail.com</li>
+                <li className="text-black">(818) 455 - 2423</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 BrightPath Scholars. All rights reserved.</p>
+            <p className="text-black">&copy; 2024 BrightPath Scholars. All rights reserved.</p>
           </div>
         </div>
       </footer>

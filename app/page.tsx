@@ -16,19 +16,19 @@ export default function HomePage() {
               <span className="font-bold text-xl text-foreground">BrightPath Scholars</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="#services" className="hover:text-foreground transition-colors text-black text-black">
                 Services
               </Link>
-              <Link href="/story" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/story" className="hover:text-foreground transition-colors text-black">
                 Our Story
               </Link>
-              <Link href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="#testimonials" className="hover:text-foreground transition-colors text-black">
                 Testimonials
               </Link>
-              <Link href="/resources" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/resources" className="hover:text-foreground transition-colors text-black">
                 Resources
               </Link>
-              <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/contact" className="hover:text-foreground transition-colors text-black">
                 Contact
               </Link>
               <Button asChild>
@@ -63,12 +63,12 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Los Angeles, CA</span>
+                  <MapPin className="h-4 w-4 text-black" />
+                  <span className="text-black">Los Angeles, CA</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4" />
-                  <span>K-12 All Subjects</span>
+                  <Users className="h-4 w-4 text-black" />
+                  <span className="text-black">K-12 All Subjects</span>
                 </div>
               </div>
             </div>
@@ -194,12 +194,12 @@ export default function HomePage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
                 Our Story: Why We Started BrightPath Scholars
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg leading-relaxed text-black">
                 "When I was younger, I needed extra support that wasn't always available. BrightPath Scholars was
                 created to give students the guidance I once needed — a place where every learner feels supported and
                 capable."
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-black">
                 Our mission is simple: helping the next generation succeed through compassionate, individualized
                 tutoring that builds not just better grades, but confidence and lifelong learning skills.
               </p>
@@ -227,7 +227,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">What Families Are Saying</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto text-black">
               Hear from parents and students who have experienced the BrightPath Scholars difference.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">Ready to see similar results for your student?</p>
+            <p className="mb-6 text-black">Ready to see similar results for your student?</p>
             <Button size="lg" asChild>
               <Link href="/contact">Schedule Your First Session</Link>
             </Button>
@@ -297,7 +297,7 @@ export default function HomePage() {
       <section className="py-20 bg-primary/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Ready to Get Started?</h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-black">
             Contact us today to schedule your first tutoring session and begin your path to academic success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -313,12 +313,12 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-muted-foreground">
             <div className="flex items-center gap-2">
-              <Mail className="h-4 w-4" />
-              <span>brightpathscholars@gmail.com</span>
+              <Mail className="h-4 w-4 text-black" />
+              <span className="text-black">brightpathscholars@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              <span>Serving Los Angeles, CA</span>
+              <MapPin className="h-4 w-4 text-black" />
+              <span className="text-black">Serving Los Angeles, CA</span>
             </div>
           </div>
         </div>
@@ -333,7 +333,7 @@ export default function HomePage() {
                 <BookOpen className="h-6 w-6 text-primary mr-2" />
                 <span className="font-bold text-lg">BrightPath Scholars</span>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-black">
                 Empowering students through personalized K-12 tutoring in Los Angeles.
               </p>
             </div>
@@ -341,22 +341,22 @@ export default function HomePage() {
               <h4 className="font-semibold text-foreground">Services</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Mathematics
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Science
                   </Link>
                 </li>
-                <li>
+                <li className="text-black">
                   <Link href="/services" className="hover:text-foreground transition-colors">
                     English & Writing
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="hover:text-foreground transition-colors">
+                  <Link href="/services" className="hover:text-foreground transition-colors text-black">
                     Test Prep
                   </Link>
                 </li>
@@ -366,17 +366,17 @@ export default function HomePage() {
               <h4 className="font-semibold text-foreground">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
-                  <Link href="/story" className="hover:text-foreground transition-colors">
+                  <Link href="/story" className="hover:text-foreground transition-colors text-black">
                     Our Story
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-foreground transition-colors">
+                  <Link href="/contact" className="hover:text-foreground transition-colors text-black">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources" className="hover:text-foreground transition-colors">
+                  <Link href="/resources" className="hover:text-foreground transition-colors text-black">
                     Resources
                   </Link>
                 </li>
@@ -385,14 +385,14 @@ export default function HomePage() {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Los Angeles, CA</li>
-                <li>brightpathscholars@gmail.com</li>
-                <li>(818) 455-2423</li>
+                <li className="text-black">Los Angeles, CA</li>
+                <li className="text-black">brightpathscholars@gmail.com</li>
+                <li className="text-black">(818) 455 - 2423</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 BrightPath Scholars. All rights reserved.</p>
+            <p className="text-black">&copy; 2024 BrightPath Scholars. All rights reserved.</p>
           </div>
         </div>
       </footer>
