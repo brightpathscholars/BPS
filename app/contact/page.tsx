@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -24,10 +25,42 @@ import {
 import Link from "next/link"
 
 export default function ContactPage() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // For now, just show an alert - this can be enhanced later with actual form processing
-    alert("Thank you for your message! We will get back to you within 24 hours.")
+    setIsSubmitting(true)
+    setSubmitMessage("")
+
+    const formData = new FormData(e.target as HTMLFormElement)
+    const messageData = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      gradeLevel: formData.get("gradeLevel") as string,
+      subjects: formData.get("subjects") as string,
+      message: formData.get("message") as string,
+    }
+
+    try {
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(messageData),
+      })
+
+      if (response.ok) {
+        setSubmitMessage("Thank you for your message! We will get back to you within 24 hours.")
+        ;(e.target as HTMLFormElement).reset()
+      } else {
+        setSubmitMessage("There was an error sending your message. Please try again or call us directly.")
+      }
+    } catch (error) {
+      setSubmitMessage("There was an error sending your message. Please try again or call us directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -150,22 +183,22 @@ export default function ContactPage() {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Parent/Guardian Name *</Label>
-                        <Input id="name" placeholder="Your full name" required />
+                        <Input id="name" name="name" placeholder="Your full name" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" type="tel" placeholder="(818) 455-2423" required />
+                        <Input id="phone" name="phone" type="tel" placeholder="(818) 455-2423" required />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="email">Email Address *</Label>
-                      <Input id="email" type="email" placeholder="your.email@example.com" required />
+                      <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="student-grade">Student's Grade Level</Label>
-                      <Select>
+                      <Select name="gradeLevel">
                         <SelectTrigger>
                           <SelectValue placeholder="Select grade level" />
                         </SelectTrigger>
@@ -189,7 +222,7 @@ export default function ContactPage() {
 
                     <div className="space-y-2">
                       <Label htmlFor="subjects">Subject(s) of Interest *</Label>
-                      <Select>
+                      <Select name="subjects" required>
                         <SelectTrigger>
                           <SelectValue placeholder="Select primary subject" />
                         </SelectTrigger>
@@ -209,13 +242,22 @@ export default function ContactPage() {
                       <Label htmlFor="message">Tell Us About Your Student's Needs</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="Please describe your student's current challenges, goals, and any specific areas where they need support..."
                         rows={4}
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
-                      Send Message
+                    {submitMessage && (
+                      <div
+                        className={`p-4 rounded-lg ${submitMessage.includes("error") ? "bg-red-50 text-red-700" : "bg-green-50 text-green-700"}`}
+                      >
+                        {submitMessage}
+                      </div>
+                    )}
+
+                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -403,9 +445,7 @@ export default function ContactPage() {
                 <BookOpen className="h-6 w-6 text-primary mr-2" />
                 <span className="font-bold text-lg">BrightPath Scholars</span>
               </div>
-              <p className="text-black">
-                Empowering students through personalized K-12 tutoring in Los Angeles.
-              </p>
+              <p className="text-black">Empowering students through personalized K-12 tutoring in Los Angeles.</p>
             </div>
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Services</h4>
