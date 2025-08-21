@@ -92,7 +92,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold text-foreground">Call Us</h3>
                 <p className="text-muted-foreground">Speak directly with our team</p>
                 <Button asChild className="w-full">
-                  <Link href="tel:+15551234567">(555) 123-4567</Link>
+                  <Link href="tel:(818)455-2423">(818) 455-2423</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-semibold text-foreground">Email Us</h3>
                 <p className="text-muted-foreground">Send us a message anytime</p>
                 <Button variant="outline" asChild className="w-full bg-transparent">
-                  <Link href="mailto:info@brightpathscholars.com">info@brightpathscholars.com</Link>
+                  <Link href="mailto:brightpathscholars@gmail.com">brightpathscholars@gmail.com</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" type="tel" placeholder="(555) 123-4567" required />
+                        <Input id="phone" type="tel" placeholder="(818) 455-2423" required />
                       </div>
                     </div>
 
@@ -450,8 +450,8 @@ export default function ContactPage() {
               <h4 className="font-semibold text-foreground">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>Los Angeles, CA</li>
-                <li>info@brightpathscholars.com</li>
-                <li>(555) 123-4567</li>
+                <li>brightpathscholars@gmail.com</li>
+                <li>(818) 455-2423</li>
               </ul>
             </div>
           </div>

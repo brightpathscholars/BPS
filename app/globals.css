@@ -5,76 +5,82 @@
 
 :root {
   --background: oklch(1 0 0); /* Pure white background */
-  --foreground: oklch(0.205 0 0); /* Dark gray for main text */
-  --card: oklch(0.985 0 0); /* Light gray for card backgrounds */
-  --card-foreground: oklch(0.439 0 0); /* Medium gray for card text */
-  --popover: oklch(0.99 0 0); /* Near white for popovers */
-  --popover-foreground: oklch(0.205 0 0); /* Dark gray for popover text */
+  --foreground: oklch(0.145 0 0); /* Dark gray for main text */
+  --card: oklch(1 0 0); /* Light gray for card backgrounds */
+  --card-foreground: oklch(0.145 0 0); /* Medium gray for card text */
+  --popover: oklch(1 0 0); /* Near white for popovers */
+  --popover-foreground: oklch(0.145 0 0); /* Dark gray for popover text */
   --primary: oklch(0.646 0.222 41.116); /* Warm blue for primary actions */
-  --primary-foreground: oklch(1 0 0); /* White text on primary */
-  --secondary: oklch(0.769 0.188 70.08); /* Green for highlights and growth */
-  --secondary-foreground: oklch(0.205 0 0); /* Dark text on secondary */
-  --muted: oklch(0.985 0 0); /* Light muted backgrounds */
-  --muted-foreground: oklch(0.439 0 0); /* Medium gray for muted text */
-  --accent: oklch(0.646 0.222 41.116); /* Same as primary for consistency */
-  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --primary-foreground: oklch(0.985 0 0); /* White text on primary */
+  /* restored orange secondary color for version 1 theme */
+  --secondary: oklch(0.708 0.17 41.116); /* Orange for highlights and accents */
+  --secondary-foreground: oklch(0.985 0 0); /* White text on secondary */
+  --muted: oklch(0.97 0 0); /* Light muted backgrounds */
+  --muted-foreground: oklch(0.556 0 0); /* Medium gray for muted text */
+  --accent: oklch(0.97 0 0); /* Same as primary for consistency */
+  --accent-foreground: oklch(0.205 0 0); /* White text on accent */
   --destructive: oklch(0.577 0.245 27.325); /* Red for errors */
-  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --destructive-foreground: oklch(0.577 0.245 27.325); /* White text on destructive */
   --border: oklch(0.922 0 0); /* Light gray borders */
-  --input: oklch(0.985 0 0); /* Light input backgrounds */
-  --ring: oklch(0.646 0.222 41.116 / 0.3); /* Primary color focus ring */
+  --input: oklch(0.922 0 0); /* Light input backgrounds */
+  --ring: oklch(0.708 0 0); /* Primary color focus ring */
   --chart-1: oklch(0.646 0.222 41.116); /* Primary blue for charts */
-  --chart-2: oklch(0.769 0.188 70.08); /* Green for charts */
-  --chart-3: oklch(0.828 0.189 84.429); /* Gold accent for charts */
-  --chart-4: oklch(0.577 0.245 27.325); /* Red for charts */
-  --chart-5: oklch(0.488 0.243 264.376); /* Purple for charts */
-  --radius: 0.5rem; /* Rounded corners for friendly feel */
+  --chart-2: oklch(0.6 0.118 184.704); /* Green for charts */
+  --chart-3: oklch(0.398 0.07 227.392); /* Gold accent for charts */
+  --chart-4: oklch(0.828 0.189 84.429); /* Red for charts */
+  --chart-5: oklch(0.769 0.188 70.08); /* Purple for charts */
+  --radius: 0.625rem; /* Rounded corners for friendly feel */
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.205 0 0);
-  --sidebar-primary: oklch(0.646 0.222 41.116);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.769 0.188 70.08);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.646 0.222 41.116 / 0.3);
+  --sidebar-ring: oklch(0.708 0 0);
+  --font-geist: "Geist", sans-serif;
+  --font-manrope: "Manrope", serif;
 }
 
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.646 0.222 41.116);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.769 0.188 70.08);
-  --secondary-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  /* restored orange secondary color for dark mode */
+  --secondary: oklch(0.708 0.17 41.116); /* Orange for dark mode highlights */
+  --secondary-foreground: oklch(0.145 0 0); /* Dark text on secondary in dark mode */
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.646 0.222 41.116);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: oklch(0.646 0.222 41.116 / 0.3);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.769 0.188 70.08);
-  --chart-3: oklch(0.828 0.189 84.429);
-  --chart-4: oklch(0.577 0.245 27.325);
-  --chart-5: oklch(0.488 0.243 264.376);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.646 0.222 41.116);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.769 0.188 70.08);
-  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.646 0.222 41.116 / 0.3);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
+  --font-sans: var(--font-geist);
+  --font-serif: var(--font-manrope);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

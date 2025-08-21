@@ -534,8 +534,8 @@ export default function ResourcesPage() {
               <h4 className="font-semibold text-foreground">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>Los Angeles, CA</li>
-                <li>info@brightpathscholars.com</li>
-                <li>(555) 123-4567</li>
+                <li>brightpathscholars@gmail.com</li>
+                <li>(818) 455-2423</li>
               </ul>
             </div>
           </div>

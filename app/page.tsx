@@ -96,8 +96,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardContent className="p-6 space-y-4">
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <BookOpen className="h-6 w-6 text-primary" />
+                <div className="h-12 w-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                  <BookOpen className="h-6 w-6 text-secondary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">Mathematics</h3>
                 <p className="text-muted-foreground">
@@ -122,8 +122,8 @@ export default function HomePage() {
 
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardContent className="p-6 space-y-4">
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Users className="h-6 w-6 text-primary" />
+                <div className="h-12 w-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                  <Users className="h-6 w-6 text-secondary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">English & Writing</h3>
                 <p className="text-muted-foreground">
@@ -148,8 +148,8 @@ export default function HomePage() {
 
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardContent className="p-6 space-y-4">
-                <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Award className="h-6 w-6 text-primary" />
+                <div className="h-12 w-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                  <Award className="h-6 w-6 text-secondary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">Test Preparation</h3>
                 <p className="text-muted-foreground">
@@ -238,8 +238,8 @@ export default function HomePage() {
                   his grades followed. The tutors are patient, kind, and truly care."
                 </blockquote>
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Users className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                    <Users className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Sarah M.</p>
@@ -296,7 +296,7 @@ export default function HomePage() {
               <Link href="/contact">Book a Session</Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="text-lg px-8 py-6 bg-transparent">
-              <Link href="tel:+1234567890">
+              <Link href="tel:(818)455-2423">
                 <Phone className="h-5 w-5 mr-2" />
                 Call Us
               </Link>
@@ -305,7 +305,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-muted-foreground">
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span>info@brightpathscholars.com</span>
+              <span>brightpathscholars@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
@@ -377,8 +377,8 @@ export default function HomePage() {
               <h4 className="font-semibold text-foreground">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>Los Angeles, CA</li>
-                <li>info@brightpathscholars.com</li>
-                <li>(555) 123-4567</li>
+                <li>brightpathscholars@gmail.com</li>
+                <li>(818) 455-2423</li>
               </ul>
             </div>
           </div>
