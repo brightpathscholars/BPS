@@ -1,3 +1,7 @@
+"use client"
+
+import type React from "react"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -20,6 +24,12 @@ import {
 import Link from "next/link"
 
 export default function ContactPage() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // For now, just show an alert - this can be enhanced later with actual form processing
+    alert("Thank you for your message! We will get back to you within 24 hours.")
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -91,9 +101,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">Call Us</h3>
                 <p className="text-muted-foreground">Speak directly with our team</p>
-                <Button asChild className="w-full">
-                  <Link href="tel:(818)455-2423">(818) 455-2423</Link>
-                </Button>
+                <p className="text-foreground font-medium text-lg">(818) 455-2423</p>
               </CardContent>
             </Card>
 
@@ -104,9 +112,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">Email Us</h3>
                 <p className="text-muted-foreground">Send us a message anytime</p>
-                <Button variant="outline" asChild className="w-full bg-transparent">
-                  <Link href="mailto:brightpathscholars@gmail.com">brightpathscholars@gmail.com</Link>
-                </Button>
+                <p className="text-foreground font-medium text-sm break-all">brightpathscholars@gmail.com</p>
               </CardContent>
             </Card>
 
@@ -140,7 +146,7 @@ export default function ContactPage() {
 
               <Card className="border-border">
                 <CardContent className="p-6">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Parent/Guardian Name *</Label>

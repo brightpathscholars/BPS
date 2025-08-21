@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, Users, Award, Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomePage() {
   return (
@@ -72,10 +73,14 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="/placeholder.svg?height=600&width=500"
+              <Image
+                src="https://8k0zqfrsj13buhdr.public.blob.vercel-storage.com/Photo%203.jpg"
                 alt="Students learning together in a bright, welcoming environment"
+                width={500}
+                height={600}
                 className="rounded-lg shadow-2xl"
+                priority
+                loading="eager"
               />
             </div>
           </div>
@@ -203,10 +208,14 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="relative">
-              <img
-                src="/placeholder.svg?height=500&width=600"
+              <Image
+                src="https://8k0zqfrsj13buhdr.public.blob.vercel-storage.com/Photo%204.avif"
                 alt="BrightPath Scholars tutors and students"
+                width={600}
+                height={500}
                 className="rounded-lg shadow-xl"
+                priority
+                loading="eager"
               />
             </div>
           </div>

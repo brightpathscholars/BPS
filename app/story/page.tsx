@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, Heart, Users, Target, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function OurStoryPage() {
   return (
@@ -87,20 +88,26 @@ export default function OurStoryPage() {
               </div>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="https://8k0zqfrsj13buhdr.public.blob.vercel-storage.com/Photo%201"
                 alt="A supportive tutoring session showing personal connection"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                width={600}
+                height={500}
+                className="rounded-lg shadow-2xl"
+                priority
               />
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="relative order-2 lg:order-1">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BD9C2FF43-8366-4E80-B0DE-40DBF6DAFDEE%7D-hXVcjrYY7clvovwteukVYby1AMNuHX.png"
+              <Image
+                src="https://8k0zqfrsj13buhdr.public.blob.vercel-storage.com/Photo%202.avif"
                 alt="Students celebrating their academic achievements"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                width={600}
+                height={500}
+                className="rounded-lg shadow-2xl"
+                priority
               />
             </div>
             <div className="space-y-6 order-1 lg:order-2">
