@@ -1,8 +1,17 @@
 import { put, list, del } from "@vercel/blob"
 import { type NextRequest, NextResponse } from "next/server"
 
+function validatePassword(request: NextRequest): boolean {
+  const password = request.headers.get("x-admin-password")
+  return password === "1351"
+}
+
 // PUT - Update message status (mark as read/unread)
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+  if (!validatePassword(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   try {
     const { status } = await request.json()
     const messageId = params.id
@@ -37,6 +46,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 
 // DELETE - Delete a message
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+  if (!validatePassword(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   try {
     const messageId = params.id
 

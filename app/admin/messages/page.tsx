@@ -1,10 +1,14 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Trash2, Mail, MailOpen, Phone, User, GraduationCap, BookOpen, Clock } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Trash2, Mail, MailOpen, Phone, User, GraduationCap, BookOpen, Clock, Lock } from "lucide-react"
 
 interface Message {
   id: string
@@ -21,14 +25,44 @@ interface Message {
 export default function MessagesAdmin() {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [password, setPassword] = useState("")
+  const [authError, setAuthError] = useState("")
 
   useEffect(() => {
-    fetchMessages()
+    const savedAuth = sessionStorage.getItem("admin-authenticated")
+    if (savedAuth === "true") {
+      setIsAuthenticated(true)
+      fetchMessages()
+    } else {
+      setLoading(false)
+    }
   }, [])
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (password === "1351") {
+      setIsAuthenticated(true)
+      sessionStorage.setItem("admin-authenticated", "true")
+      setAuthError("")
+      fetchMessages()
+    } else {
+      setAuthError("Incorrect password")
+    }
+  }
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("/api/messages")
+      const response = await fetch("/api/messages", {
+        headers: {
+          "x-admin-password": "1351",
+        },
+      })
+      if (response.status === 401) {
+        setIsAuthenticated(false)
+        sessionStorage.removeItem("admin-authenticated")
+        return
+      }
       const data = await response.json()
       setMessages(data.messages || [])
     } catch (error) {
@@ -42,7 +76,10 @@ export default function MessagesAdmin() {
     try {
       await fetch(`/api/messages/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": "1351",
+        },
         body: JSON.stringify({ status }),
       })
       fetchMessages()
@@ -54,7 +91,12 @@ export default function MessagesAdmin() {
   const deleteMessage = async (id: string) => {
     if (confirm("Are you sure you want to delete this message?")) {
       try {
-        await fetch(`/api/messages/${id}`, { method: "DELETE" })
+        await fetch(`/api/messages/${id}`, {
+          method: "DELETE",
+          headers: {
+            "x-admin-password": "1351",
+          },
+        })
         fetchMessages()
       } catch (error) {
         console.error("Error deleting message:", error)
@@ -64,6 +106,41 @@ export default function MessagesAdmin() {
 
   const formatDate = (timestamp: string) => {
     return new Date(timestamp).toLocaleString()
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-8">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <div className="flex justify-center mb-4">
+              <Lock className="h-12 w-12 text-blue-600" />
+            </div>
+            <CardTitle className="text-2xl">Admin Access</CardTitle>
+            <p className="text-gray-600">Enter password to view client messages</p>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div>
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter admin password"
+                  className="mt-1"
+                />
+              </div>
+              {authError && <p className="text-red-600 text-sm">{authError}</p>}
+              <Button type="submit" className="w-full">
+                Access Messages
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    )
   }
 
   if (loading) {
@@ -80,8 +157,21 @@ export default function MessagesAdmin() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Client Messages</h1>
-          <p className="text-gray-600">Manage consultation requests and messages from potential clients</p>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Client Messages</h1>
+              <p className="text-gray-600">Manage consultation requests and messages from potential clients</p>
+            </div>
+            <Button
+              variant="outline"
+              onClick={() => {
+                setIsAuthenticated(false)
+                sessionStorage.removeItem("admin-authenticated")
+              }}
+            >
+              Logout
+            </Button>
+          </div>
         </div>
 
         {messages.length === 0 ? (

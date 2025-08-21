@@ -1,6 +1,11 @@
 import { put, list } from "@vercel/blob"
 import { type NextRequest, NextResponse } from "next/server"
 
+function validatePassword(request: NextRequest): boolean {
+  const password = request.headers.get("x-admin-password")
+  return password === "1351"
+}
+
 // POST - Save a new message
 export async function POST(request: NextRequest) {
   try {
@@ -33,7 +38,11 @@ export async function POST(request: NextRequest) {
 }
 
 // GET - Retrieve all messages
-export async function GET() {
+export async function GET(request: NextRequest) {
+  if (!validatePassword(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   try {
     const { blobs } = await list({ prefix: "messages/" })
 
