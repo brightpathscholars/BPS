@@ -88,9 +88,9 @@ export default function OurStoryPage() {
             </div>
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="https://8k0zqfrsj13buhdr.public.blob.vercel-storage.com/Photo%201"
                 alt="A supportive tutoring session showing personal connection"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-2xl w-full h-auto"
               />
             </div>
           </div>
@@ -98,9 +98,9 @@ export default function OurStoryPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="relative order-2 lg:order-1">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BD9C2FF43-8366-4E80-B0DE-40DBF6DAFDEE%7D-hXVcjrYY7clvovwteukVYby1AMNuHX.png"
                 alt="Students celebrating their academic achievements"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-2xl w-full h-auto"
               />
             </div>
             <div className="space-y-6 order-1 lg:order-2">

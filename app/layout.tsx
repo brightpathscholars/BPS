@@ -1,13 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Manrope } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
+import { Manrope } from "next/font/google"
 import "./globals.css"
-
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist",
-})
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -28,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${manrope.variable} antialiased`}>
+    <html lang="en" className={`${GeistSans.variable} ${manrope.variable} antialiased`}>
       <body>{children}</body>
     </html>
   )
